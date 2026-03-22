@@ -1,6 +1,7 @@
 package com.example.zorvia.screens.homescreen
 
 import android.widget.Space
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -29,6 +30,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.zorvia.R
+import com.example.zorvia.model.Product
 import com.example.zorvia.screens.ui_components.MyBottomNavBar
 
 @Preview(showBackground = true, showSystemUi = true)
@@ -58,7 +60,7 @@ fun HomeScreen() {
         )
         Column(
             modifier = Modifier.fillMaxSize().padding(16.dp).padding(innerPadding)
-        ){
+        ) {
             Text(
                 text = "Location",
                 color = Color.Gray,
@@ -70,21 +72,79 @@ fun HomeScreen() {
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Text(
-                    text = location,
-                    color = Color.White,
-                    fontWeight = FontWeight.SemiBold,
-                    fontSize = 16.sp
-                )
-                Icon(imageVector = Icons.Default.KeyboardArrowDown,
-                    contentDescription = "Change Location",
-                    tint = Color.White
-                )
-            }
+//                Text(
+//                    text = location,
+//                    color = Color.White,
+//                    fontWeight = FontWeight.SemiBold,
+//                    fontSize = 16.sp
+//                )
+//                Icon(imageVector = Icons.Default.KeyboardArrowDown,
+//                    contentDescription = "Change Location",
+//                    tint = Color.White
+//                )
+//            }
+//
+//            Spacer(modifier = Modifier.height(30.dp))
+//
+//            MySearchBar()
+//
+//            Spacer(modifier = Modifier.height(40.dp))
+//
+//            Image(
+//                painter = painterResource(R.drawable.banner_1),
+//                contentDescription = "Banner Image"
+//            )
+//
+//            Spacer(modifier = Modifier.height(16.dp))
+//
+//            HomeScreenCategories()
 
-            Spacer(modifier = Modifier.height(40.dp))
-            
-            MySearchBar()
+//            Displaying Products
+                val products = listOf(
+                    Product(id = 1, "Espresso", "Strong and Rich", 3.80, R.drawable.coffee_2),
+                    Product(id = 2, "Latte", "Smooth and creamy", 4.50, R.drawable.coffee_3),
+                    Product(id = 3, "Cappuccino", "with chocolate", 4.20, R.drawable.coffee_1),
+                    Product(id = 4, "Mocha", "With cocoa flavor", 4.70, R.drawable.coffee_4),
+                    Product(id = 5, "Macchiato", "Bold and milky", 4.60, R.drawable.coffee_5),
+                    Product(id = 6, "Flat White", "Velvety smooth", 4.40, R.drawable.coffee_6),
+                    Product(
+                        id = 7,
+                        "Iced Mocha",
+                        "Refreshing and rich ",
+                        4.70,
+                        R.drawable.coffee_4
+                    ),
+                )
+                ProductsGrid(products = products) {
+                    Text(
+                        text = location,
+                        color = Color.White,
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 16.sp
+                    )
+                    Icon(
+                        imageVector = Icons.Default.KeyboardArrowDown,
+                        contentDescription = "Change Location",
+                        tint = Color.White
+                    )
+
+
+                    Spacer(modifier = Modifier.height(30.dp))
+
+                    MySearchBar()
+
+                    Spacer(modifier = Modifier.height(40.dp))
+
+                    Image(
+                        painter = painterResource(R.drawable.banner_1),
+                        contentDescription = "Banner Image"
+                    )
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    HomeScreenCategories()
+                }
+            }
         }
     }
 }
