@@ -1,6 +1,5 @@
-package com.example.zorvia.screens.ui_components
+package com.example.zorvia.presentation.ui_components
 
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
@@ -15,7 +14,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.zorvia.R
-import com.example.zorvia.ui.theme.LightBrown
+import com.example.zorvia.presentation.theme.LightBrown
 
 
 @Preview(showBackground = true, showSystemUi = true)

@@ -1,4 +1,4 @@
-package com.example.zorvia.screens.welcomescreen
+package com.example.zorvia.presentation.screens.welcomescreen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,12 +24,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.zorvia.R
-import com.example.zorvia.ui.theme.LightBrown
+import com.example.zorvia.presentation.theme.LightBrown
 
-@Preview(showBackground = true)
 @Composable
-fun WelcomeScreen(){
+fun WelcomeScreen(navController: NavController){
     Box(
         modifier = Modifier.fillMaxSize().background(color = Color.Black)
     ){

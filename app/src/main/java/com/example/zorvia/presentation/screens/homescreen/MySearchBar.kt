@@ -1,4 +1,4 @@
-package com.example.zorvia.screens.homescreen
+package com.example.zorvia.presentation.screens.homescreen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
@@ -25,7 +25,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.zorvia.R
-import com.example.zorvia.ui.theme.LightBrown
+import com.example.zorvia.presentation.theme.LightBrown
 
 @Preview(showBackground = true)
 @Composable

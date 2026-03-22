@@ -1,4 +1,4 @@
-package com.example.zorvia.screens.homescreen
+package com.example.zorvia.presentation.screens.homescreen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.padding
