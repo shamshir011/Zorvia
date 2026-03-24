@@ -26,11 +26,6 @@ import com.example.zorvia.presentation.theme.LightGray
 @Composable
 fun SelectSizeChip(sizeText: String, selected: Boolean, onClick: () -> Unit, modifier: Modifier){
 
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
         Box(
             modifier = modifier
                 .background(
@@ -38,7 +33,9 @@ fun SelectSizeChip(sizeText: String, selected: Boolean, onClick: () -> Unit, mod
                     RoundedCornerShape(12.dp))
 
                 .border(1.dp,
-                    color =if(selected) Color(0xFFC67C4E) else Color(0xFFE1E1E1),
+                    color =if(selected) Color(0xFFC67C4E
+
+                    ) else Color(0xFFE1E1E1),
                     RoundedCornerShape(12.dp)
                 )
                 .height(35.dp)
@@ -53,4 +50,3 @@ fun SelectSizeChip(sizeText: String, selected: Boolean, onClick: () -> Unit, mod
             )
         }
     }
-}

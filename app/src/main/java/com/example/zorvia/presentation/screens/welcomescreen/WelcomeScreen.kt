@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.zorvia.R
+import com.example.zorvia.presentation.navigation.Routes
 import com.example.zorvia.presentation.theme.LightBrown
 
 @Composable
@@ -62,8 +63,8 @@ fun WelcomeScreen(navController: NavController){
 
             Spacer(modifier = Modifier.height(50.dp))
             Button(
-                onClick = {},
-                modifier = Modifier.fillMaxWidth().height(30.dp),
+                onClick = {navController.navigate(Routes.HomeScreen)},
+                modifier = Modifier.fillMaxWidth().height(50.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = LightBrown
                 ),

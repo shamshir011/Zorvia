@@ -1,18 +1,20 @@
 package com.example.zorvia.presentation.screens.detailsscreen
 
-
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.navigation.NavController
 import com.example.zorvia.R
 import com.example.zorvia.model.Product
 
 
 @Composable
-fun DetailsScreen() {
+fun DetailsScreen(productId: Int, navController: NavController) {
 
     val products = listOf(
         Product(id = 1, "Espresso", "Strong and Rich", 3.80, R.drawable.coffee_2),
@@ -25,21 +27,26 @@ fun DetailsScreen() {
         ),
     )
 
-    val selectedProduct = products.find { it.id == 1 }
+    val selectedProduct = products.find { it.id == productId }
+
+    if(selectedProduct == null){
+        Text("Product not found!", color = Color.Red)
+        return
+    }
 
     Scaffold(
-        topBar = {DetailsScreenTopAppBar()},
+        topBar = {DetailsScreenTopAppBar(navController)},
         bottomBar = {DetailsScreenBottomBar()}
     ) { innerPadding ->
 
         LazyColumn {
             item {
-//                ProductDetailsContent(
-//                    selectedProduct,
-//                    innerPadding
-//                )
+                ProductDetailsContent(
+                    selectedProduct,
+                    innerPadding
+                )
             }
         }
-        Box(modifier = Modifier.padding(innerPadding))
+//        Box(modifier = Modifier.padding(innerPadding))
     }
 }

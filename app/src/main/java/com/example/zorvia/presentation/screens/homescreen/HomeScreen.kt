@@ -81,7 +81,7 @@ fun HomeScreen(navController: NavController) {
                     Product(id = 7, "Iced Mocha", "Refreshing and rich ", 4.70,R.drawable.coffee_4
                     ),
                 )
-                ProductsGrid(products = products) {
+                ProductsGrid(products = products, navController = navController){
                     Text(
                         text = location,
                         color = Color.White,
