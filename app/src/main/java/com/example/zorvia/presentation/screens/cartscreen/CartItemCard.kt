@@ -102,7 +102,8 @@ fun CartItemCard(product: Product) {
                 ) {
                     Icon(
                         painter = painterResource(R.drawable.minus),
-                        contentDescription = "Decrease"
+                        contentDescription = "Decrease",
+                        tint = LightBrown
                     )
                 }
 
@@ -122,7 +123,8 @@ fun CartItemCard(product: Product) {
                 ) {
                     Icon(
                         imageVector = Icons.Default.Add,
-                        contentDescription = "Increase"
+                        contentDescription = "Increase",
+                        tint = LightBrown
                     )
                 }
             }
