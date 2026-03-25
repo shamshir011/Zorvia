@@ -39,7 +39,9 @@ fun MyBottomNavBar(navController: NavController, routes: String) {
 //                Handling bottom bar navigation
                 onClick = {
                     navController.navigate(item.routes){
-                        popUpTo(navController.graph.startDestinationId){
+//                        popUpTo(navController.graph.startDestinationId)
+                        popUpTo(Routes.HomeScreen)
+                        {
                             saveState = true
                         }
                         launchSingleTop = true

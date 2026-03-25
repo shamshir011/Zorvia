@@ -9,6 +9,7 @@ import com.example.zorvia.presentation.screens.cartscreen.CartScreen
 import com.example.zorvia.presentation.screens.detailsscreen.DetailsScreen
 import com.example.zorvia.presentation.screens.favouritescreen.FavouritesScreen
 import com.example.zorvia.presentation.screens.homescreen.HomeScreen
+import com.example.zorvia.presentation.screens.profilescreen.ProfileScreen
 import com.example.zorvia.presentation.screens.welcomescreen.WelcomeScreen
 
 @Composable
@@ -39,6 +40,10 @@ fun NavGraph(){
 
         composable<Routes.FavouritesScreen>{
             FavouritesScreen(navController)
+        }
+
+        composable<Routes.ProfileScreen>{
+            ProfileScreen(navController)
         }
     }
 }

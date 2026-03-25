@@ -30,22 +30,26 @@ import com.example.zorvia.presentation.navigation.Routes
 import com.example.zorvia.presentation.theme.LightBrown
 
 @Composable
-fun WelcomeScreen(navController: NavController){
+fun WelcomeScreen(navController: NavController) {
     Box(
-        modifier = Modifier.fillMaxSize().background(color = Color.Black)
-    ){
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = Color.Black)
+    ) {
         Image(
             painter = painterResource(R.drawable.image_splash),
             contentDescription = "Splash screen"
         )
 
         Column(
-            modifier = Modifier.fillMaxSize().padding(vertical = 70.dp, horizontal = 24.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(vertical = 70.dp, horizontal = 24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Bottom
         ) {
             Text(
-                text =  "Fall in  Love with Coffee in Blissful Delight!",
+                text = "Fall in  Love with Coffee in Blissful Delight!",
                 color = Color.White,
                 fontWeight = FontWeight.Bold,
                 fontSize = 28.sp,
@@ -55,16 +59,27 @@ fun WelcomeScreen(navController: NavController){
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                text =  "Welcome to our Zorvia coffee corner, where every cup is a delight for you.",
+                text = "Welcome to our Zorvia coffee corner, where every cup is a delight for you.",
                 color = Color.LightGray,
                 textAlign = TextAlign.Center,
                 fontSize = 15.sp
             )
 
             Spacer(modifier = Modifier.height(50.dp))
+
             Button(
-                onClick = {navController.navigate(Routes.HomeScreen)},
-                modifier = Modifier.fillMaxWidth().height(50.dp),
+                onClick = {
+                    navController.navigate(Routes.HomeScreen)
+                    {
+                        popUpTo(Routes.WelcomeScreen) {
+                            inclusive = true
+                        }
+                    }
+                },
+
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(50.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = LightBrown
                 ),
