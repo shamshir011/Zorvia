@@ -37,14 +37,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.zorvia.R
 import com.example.zorvia.model.Product
 import com.example.zorvia.presentation.theme.LightBrown
 import com.example.zorvia.presentation.theme.LightGray
+import com.example.zorvia.presentation.ui_components.MyBottomNavBar
 
-@Preview
+
 @Composable
-fun CartScreen() {
+fun CartScreen(navController: NavController) {
 
     val cartProducts = listOf(
         Product(id = 1, "Espresso", "Strong and Rich", 3.80, R.drawable.coffee_2),
@@ -57,12 +59,13 @@ fun CartScreen() {
     var totalAmount by remember { mutableStateOf(amount+deliveryFee) }
 
     Scaffold(
-        topBar = { CartScreenTopBar() }
+        topBar = { CartScreenTopBar(navController) },
+        bottomBar = { MyBottomNavBar(navController = navController, "Cart") }
     ) { innerPadding ->
 
         LazyColumn(
             modifier = Modifier
-                .padding(16.dp)
+                .padding(start = 16.dp, end = 16.dp)
                 .padding(innerPadding)
         ) {
 

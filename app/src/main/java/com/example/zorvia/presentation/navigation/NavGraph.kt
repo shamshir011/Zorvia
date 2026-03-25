@@ -5,6 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
+import com.example.zorvia.presentation.screens.cartscreen.CartScreen
 import com.example.zorvia.presentation.screens.detailsscreen.DetailsScreen
 import com.example.zorvia.presentation.screens.homescreen.HomeScreen
 import com.example.zorvia.presentation.screens.welcomescreen.WelcomeScreen
@@ -29,6 +30,10 @@ fun NavGraph(){
         composable<Routes.DetailScreen> { backStackEntry ->
             val args = backStackEntry.toRoute<Routes.DetailScreen>()
             DetailsScreen(productId = args.productId, navController)
+        }
+
+        composable<Routes.CartScreen>{
+            CartScreen(navController)
         }
     }
 }

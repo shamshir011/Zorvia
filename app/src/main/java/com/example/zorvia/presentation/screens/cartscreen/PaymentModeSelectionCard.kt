@@ -60,7 +60,7 @@ fun PaymentModeSelectionCard(totalAmount: Double){
 
     ) {
         Column(
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(24.dp)
         ) {
 
             Row(
@@ -90,13 +90,25 @@ fun PaymentModeSelectionCard(totalAmount: Double){
 
                         Spacer(modifier = Modifier.width(4.dp))
 
-                        Text(
-                            text = "$$totalAmount",
-                            style = MaterialTheme.typography.bodyLarge.copy(
-                                fontWeight = FontWeight.SemiBold
-                            ),
-                            color = LightBrown
-                        )
+                        if(selectedMode == "Online"){
+                            Text(
+                                text = "$$totalAmount",
+                                style = MaterialTheme.typography.bodyLarge.copy(
+                                    fontWeight = FontWeight.SemiBold
+                                ),
+                                color = LightBrown
+                            )
+                        }
+                        else{
+                            Text(
+                                text = "$${totalAmount +1.0}",
+                                style = MaterialTheme.typography.bodyLarge.copy(
+                                    fontWeight = FontWeight.SemiBold
+                                ),
+                                color = LightBrown
+                            )
+                        }
+
                     }
                 }
 
@@ -104,7 +116,9 @@ fun PaymentModeSelectionCard(totalAmount: Double){
                     Icon(
                         painter = painterResource(R.drawable.regular_outline_arrow_down),
                         contentDescription = "Change Payment Mode",
-                        modifier = Modifier.size(20.dp).clickable{expanded = true}
+                        modifier = Modifier
+                            .size(20.dp)
+                            .clickable { expanded = true }
                     )
 
                     DropdownMenu(
@@ -135,9 +149,9 @@ fun PaymentModeSelectionCard(totalAmount: Double){
                                 modifier = Modifier
                                     .padding(horizontal = 4.dp)
                                     .background(
-                                   color =  if(selectedMode == mode) LightBrown.copy(alpha = 0.1f)
-                                    else Color.Transparent
-                                )
+                                        color = if (selectedMode == mode) LightBrown.copy(alpha = 0.1f)
+                                        else Color.Transparent
+                                    )
                             )
                         }
                     }

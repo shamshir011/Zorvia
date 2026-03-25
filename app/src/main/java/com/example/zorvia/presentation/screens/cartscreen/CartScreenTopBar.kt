@@ -15,10 +15,11 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.zorvia.R
+import com.example.zorvia.presentation.navigation.Routes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CartScreenTopBar(){
+fun CartScreenTopBar(navController: NavController){
     TopAppBar(
         title = {
             Text(
@@ -28,14 +29,5 @@ fun CartScreenTopBar(){
                 fontWeight = FontWeight.Bold
             )
         },
-
-        navigationIcon = {
-            Icon(
-                painter = painterResource(R.drawable.regular_outline_arrow_left),
-                contentDescription = "Back Button",
-                modifier = Modifier.padding(start = 8.dp)
-//                    Its for navigate to back
-                    .clickable(onClick = {})
-            ) },
     )
 }
