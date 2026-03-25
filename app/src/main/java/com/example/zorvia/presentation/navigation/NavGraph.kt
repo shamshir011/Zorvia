@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.zorvia.presentation.screens.cartscreen.CartScreen
 import com.example.zorvia.presentation.screens.detailsscreen.DetailsScreen
+import com.example.zorvia.presentation.screens.favouritescreen.FavouritesScreen
 import com.example.zorvia.presentation.screens.homescreen.HomeScreen
 import com.example.zorvia.presentation.screens.welcomescreen.WelcomeScreen
 
@@ -34,6 +35,10 @@ fun NavGraph(){
 
         composable<Routes.CartScreen>{
             CartScreen(navController)
+        }
+
+        composable<Routes.FavouritesScreen>{
+            FavouritesScreen(navController)
         }
     }
 }

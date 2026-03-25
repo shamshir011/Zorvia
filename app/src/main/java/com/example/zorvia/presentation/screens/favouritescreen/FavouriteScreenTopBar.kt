@@ -1,4 +1,4 @@
-package com.example.zorvia.presentation.screens.cartscreen
+package com.example.zorvia.presentation.screens.favouritescreen
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,11 +19,11 @@ import com.example.zorvia.presentation.navigation.Routes
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun CartScreenTopBar(){
+fun FavouritesScreenTopBar(){
     TopAppBar(
         title = {
             Text(
-                "Order",
+                "Favourite",
                 modifier = Modifier.fillMaxWidth(),
                 textAlign = TextAlign.Center,
                 fontWeight = FontWeight.Bold

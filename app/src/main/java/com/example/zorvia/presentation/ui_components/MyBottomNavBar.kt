@@ -26,8 +26,8 @@ fun MyBottomNavBar(navController: NavController, routes: String) {
     val navItems = listOf(
         NavItem("Home", R.drawable.regular_outline_home, Routes.HomeScreen),
         NavItem("Cart", R.drawable.regular_outline_bag, Routes.CartScreen),
-        NavItem("Notifications", R.drawable.regular_outline_heart, Routes.ProfileScreen),
-        NavItem("Profile", R.drawable.outline_account_circle_24, Routes.FavouritesScreen)
+        NavItem("Favourites", R.drawable.regular_outline_heart, Routes.FavouritesScreen),
+        NavItem("Profile", R.drawable.outline_account_circle_24, Routes.ProfileScreen)
     )
 
     NavigationBar(
